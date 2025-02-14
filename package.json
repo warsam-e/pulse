@@ -1,0 +1,13 @@
+{
+	"name": "pulse",
+	"private": true,
+	"workspaces": ["packages/*"],
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4"
+	},
+	"scripts": {
+		"start": "docker-compose up -d",
+		"build:site": "bun run --cwd packages/site build",
+		"build": "bun run build:site"
+	}
+}

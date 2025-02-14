@@ -1,0 +1,16 @@
+{
+	"name": "@pulse/api",
+	"private": true,
+	"main": "./lib/index.ts",
+	"type": "module",
+	"scripts": {
+		"start": "bun ./lib/index.ts"
+	},
+	"devDependencies": {
+		"@types/bun": "1.2.2"
+	},
+	"dependencies": {
+		"@pulse/core": "workspace:*",
+		"elysia": "1.2.12"
+	}
+}
