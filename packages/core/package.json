@@ -7,9 +7,14 @@
 		"start": "bun ./lib/index.ts"
 	},
 	"devDependencies": {
-		"@types/bun": "1.2.2"
+		"@types/bun": "1.2.2",
+		"@types/pg": "8.11.11",
+		"@types/pg-format": "1.0.5"
 	},
 	"dependencies": {
-		"elysia": "1.2.12"
+		"@octokit/rest": "21.1.0",
+		"elysia": "1.2.12",
+		"pg": "8.13.3",
+		"pg-format": "1.0.4"
 	}
 }
