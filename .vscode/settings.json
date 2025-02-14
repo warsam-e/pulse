@@ -17,7 +17,7 @@
 	"files.eol": "\n",
 	"editor.insertSpaces": false,
 	"editor.minimap.scale": 2,
-	"editor.minimap.sectionHeaderFontSize": 12,
+	"editor.minimap.sectionHeaderFontSize": 9,
 	"javascript.inlayHints.functionLikeReturnTypes.enabled": false,
 	"typescript.inlayHints.variableTypes.enabled": false,
 	"typescript.inlayHints.functionLikeReturnTypes.enabled": false,
