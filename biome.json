@@ -5,6 +5,7 @@
 	},
 	"formatter": {
 		"enabled": true,
+		"ignore": ["node_modules"],
 		"lineWidth": 120,
 		"indentWidth": 4,
 		"indentStyle": "tab"
@@ -16,10 +17,14 @@
 	},
 	"linter": {
 		"enabled": true,
+		"ignore": ["node_modules"],
 		"rules": {
 			"recommended": true,
 			"correctness": {
 				"noUnusedImports": "error"
+			},
+			"style": {
+				"useNamingConvention": "error"
 			}
 		}
 	}

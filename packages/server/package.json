@@ -1,0 +1,23 @@
+{
+	"name": "@pulse/server",
+	"private": true,
+	"main": "./lib/index.ts",
+	"type": "module",
+	"scripts": {
+		"dev": "bun --watch ./lib/index.ts",
+		"build": "bun run build.ts"
+	},
+	"devDependencies": {
+		"@types/bun": "1.2.2"
+	},
+	"dependencies": {
+		"@elysiajs/cors": "1.2.0",
+		"@elysiajs/swagger": "1.2.0",
+		"@octokit/rest": "21.1.0",
+		"arctic": "3.3.0",
+		"elysia": "1.2.12",
+		"elysia-oauth2": "2.0.0",
+		"pg": "8.13.3",
+		"typeorm": "0.3.20"
+	}
+}

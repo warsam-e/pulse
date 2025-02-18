@@ -1,6 +1,7 @@
 {
 	"compilerOptions": {
 		"declaration": false,
+		"experimentalDecorators": true,
 		"forceConsistentCasingInFileNames": true,
 		"lib": ["ESNext"],
 		"module": "ESNext",
