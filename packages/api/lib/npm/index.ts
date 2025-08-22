@@ -16,7 +16,8 @@ let i = 0;
 
 export function npm_load(ws: ElysiaWS) {
 	if (!all.length) return;
-	for (let item of all.reverse()) if (item.seq > 0) ws.send(item);
+	let list = all.slice(0, 100);
+	for (let item of list.reverse()) if (item.seq > 0) ws.send(item);
 }
 
 export async function init_npm() {
