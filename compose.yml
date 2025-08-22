@@ -1,0 +1,9 @@
+name: npm_pulse
+services:
+  api:
+    container_name: npm_pulse_api
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3984:3000
