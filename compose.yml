@@ -2,6 +2,7 @@ name: npm_pulse
 services:
   api:
     container_name: npm_pulse_api
+    restart: unless-stopped
     build:
       context: .
       dockerfile: Dockerfile

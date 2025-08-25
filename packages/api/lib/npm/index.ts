@@ -43,7 +43,8 @@ async function check_queue() {
 }
 
 async function check_changes() {
-	const res = await _get_changes({ since: last_seq });
+	const res = await try_prom(_get_changes({ since: last_seq }));
+	if (!res) return;
 	if (res.last_seq === last_seq) return;
 	last_seq = res.last_seq;
 	for (const item of res.results) {
