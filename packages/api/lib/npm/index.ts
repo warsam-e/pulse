@@ -6,7 +6,7 @@ import Queue from 'yocto-queue';
 import { get_json, try_prom } from '../utils';
 import { ws_send } from '../ws';
 
-let all: ChangeItem[] = [];
+const all: ChangeItem[] = [];
 
 const queue = new Queue<RawChangeItem>();
 
@@ -16,8 +16,8 @@ let i = 0;
 
 export function npm_load(ws: ElysiaWS) {
 	if (!all.length) return;
-	let list = all.slice(0, 100);
-	for (let item of list.reverse()) if (item.seq > 0) ws.send(item);
+	const list = all.slice(0, 100);
+	for (const item of list.reverse()) if (item.seq > 0) ws.send(item);
 }
 
 export async function init_npm() {
@@ -84,10 +84,10 @@ async function _get_first_seq() {
 
 export type RawChangeItem = { seq: number; id: string; changes: Array<{ rev: string }>; deleted?: boolean };
 
-export const _get_changes = (queries: Record<string, StringLike>) =>
+const _params = (queries: Record<string, StringLike>) =>
+	new URLSearchParams(Object.fromEntries(Object.entries(queries).map(([k, v]) => [k, v.toString()]))).toString();
+export const _get_changes = (_queries: Record<string, StringLike>) =>
 	get_json<{
 		results: Array<RawChangeItem>;
 		last_seq: number;
-	}>(
-		`https://replicate.npmjs.com/_changes?${new URLSearchParams(Object.entries(queries).map(([k, v]) => [k, v.toString()]))}`,
-	);
+	}>(`https://replicate.npmjs.com/_changes?${_params(_queries)}`);

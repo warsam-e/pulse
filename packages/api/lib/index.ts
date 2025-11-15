@@ -11,7 +11,7 @@ await init_npm();
 const app = new Elysia()
 	.use(
 		cors({
-			origin: /.*\.warsame\.me$/,
+			origin: /.*\.warsa\.me$/,
 		}),
 	)
 	.get('/', { message: 'Pulse API' })

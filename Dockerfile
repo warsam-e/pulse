@@ -1,8 +1,7 @@
-FROM oven/bun:1.2.20
+FROM oven/bun:1.3.2
 
 # install curl
 RUN apt-get update && apt-get install -y curl
-
 
 WORKDIR /app
 

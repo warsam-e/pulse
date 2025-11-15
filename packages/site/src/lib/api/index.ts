@@ -1,12 +1,12 @@
-import { pulse_connected, pulse_items, store_val } from '$lib/stores';
-import { treaty, type Treaty } from '@elysiajs/eden';
+import { type Treaty, treaty } from '@elysiajs/eden';
 import type { App, ChangeItem } from '@pulse/api';
+import { pulse_connected, pulse_items, store_val } from '$lib/stores';
 
 const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
-export const api = treaty<App>('https://pulse.warsame.me');
+export const api = treaty<App>('https://pulse.warsa.me');
 
-let _get_ws = () => api.ws.subscribe();
+const _get_ws = () => api.ws.subscribe();
 type WS = Awaited<ReturnType<typeof _get_ws>>;
 type WSMessageData = Treaty.OnMessage<ChangeItem | undefined>;
 
@@ -26,9 +26,9 @@ const _handle_close = () => {
 	reconnect();
 };
 const _handle_message = (data: WSMessageData) => {
-	let item = data.data;
+	const item = data.data;
 	if (!item?.seq) return;
-	let list = store_val(pulse_items);
+	const list = store_val(pulse_items);
 	if (list.some((i) => i.seq === item?.seq)) return;
 	pulse_items.set([item, ...list]);
 };
