@@ -1,4 +1,4 @@
-import cors from '@elysiajs/cors';
+import cors from '@elysia/cors';
 import { Elysia } from 'elysia';
 import { _schema_change_item, init_npm, npm_load } from './npm';
 import { IS_PROD } from './utils';

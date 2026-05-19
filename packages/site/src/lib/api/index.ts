@@ -1,10 +1,11 @@
-import { type Treaty, treaty } from '@elysiajs/eden';
+import { type Treaty, treaty } from '@elysia/eden';
 import type { App, ChangeItem } from '@pulse/api';
+import { dev } from '$app/environment';
 import { pulse_connected, pulse_items, store_val } from '$lib/stores';
 
 const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
-export const api = treaty<App>('https://pulse.warsa.me');
+export const api = treaty<App>(dev ? 'http://localhost:3984' : 'https://pulse.warsa.me');
 
 const _get_ws = () => api.ws.subscribe();
 type WS = Awaited<ReturnType<typeof _get_ws>>;

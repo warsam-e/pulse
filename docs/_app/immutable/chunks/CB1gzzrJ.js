@@ -1,0 +1,1 @@
+import{F as e,I as t,P as n}from"./DkQTnnjp.js";import"./ygvjaO-D.js";var r=t(!1),i=t([]),a=e=>n(e),o=e(new Date,e=>{let t=setInterval(()=>e(new Date),1e3);return()=>clearInterval(t)}),s=e=>e;function c(e,{delay:t=0,duration:n=400,easing:r=s}={}){let i=+getComputedStyle(e).opacity;return{delay:t,duration:n,easing:r,css:e=>`opacity: ${e*i}`}}export{a,i,o as n,r,c as t};
